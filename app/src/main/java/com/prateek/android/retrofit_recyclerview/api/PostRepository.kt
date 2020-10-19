@@ -11,7 +11,7 @@ import kotlinx.coroutines.withContext
 
 class PostRepository : PostRepositoryHelper {
 
-    private val api = RetroHTTP.instance.getService(PostApiInterface::class.java)
+    private val api = RetroHTTP.INSTANCE.getService(PostApiInterface::class.java)
 
     companion object {
         val INSTANCE: PostRepository by lazy { PostRepository() }

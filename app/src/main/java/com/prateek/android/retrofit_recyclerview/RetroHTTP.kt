@@ -18,7 +18,7 @@ class RetroHTTP {
 
     companion object {
        private const val BASE_URL = "https://jsonplaceholder.typicode.com"
-        val instance: RetroHTTP by lazy {
+        val INSTANCE: RetroHTTP by lazy {
             RetroHTTP()
         }
     }
