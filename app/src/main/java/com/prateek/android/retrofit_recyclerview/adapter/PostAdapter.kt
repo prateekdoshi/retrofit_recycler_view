@@ -7,9 +7,8 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.prateek.android.retrofit_recyclerview.R
 import com.prateek.android.retrofit_recyclerview.model.Post
-import com.prateek.android.retrofit_recyclerview.model.PostResponse
 
-class MyAdapter(private val postList: ArrayList<Post>) : RecyclerView.Adapter<PostViewHolder>() {
+class PostAdapter(private val postList: ArrayList<Post>) : RecyclerView.Adapter<PostViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PostViewHolder {
         val v = LayoutInflater.from(parent.context)
             .inflate(R.layout.list_layout, parent, false)

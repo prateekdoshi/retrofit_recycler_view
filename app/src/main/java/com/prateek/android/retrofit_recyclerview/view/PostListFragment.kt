@@ -9,7 +9,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.prateek.android.retrofit_recyclerview.R
-import com.prateek.android.retrofit_recyclerview.adapter.MyAdapter
+import com.prateek.android.retrofit_recyclerview.adapter.PostAdapter
 import com.prateek.android.retrofit_recyclerview.api.PostRepository
 import com.prateek.android.retrofit_recyclerview.model.Post
 import com.prateek.android.retrofit_recyclerview.viewmodel.PostViewModel
@@ -34,7 +34,7 @@ class PostListFragment : Fragment(), View.OnClickListener {
         loadMore.setOnClickListener(this)
         postList = arguments?.let { it.getParcelableArrayList<Post>("postList")?.slice(1..3) as ArrayList<Post> }
         recyclerview.apply {
-            adapter = postList?.let { postList -> MyAdapter(postList) }
+            adapter = postList?.let { postList -> PostAdapter(postList) }
             layoutManager = LinearLayoutManager(activity)
         }
         postViewModel = ViewModelProvider(this, PostViewModelFactory(PostRepository.INSTANCE)).get(PostViewModel::class.java)
